@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+# Memory Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple memory game built with React and TypeScript. The game involves flipping over two hidden cards at a time to find a matching pair.
 
-## Available Scripts
+## Project Structure
 
-In the project directory, you can run:
+The main component of the game is the Board component, which is responsible for rendering the game board and handling the game logic.
 
-### `npm start`
+Here's a brief overview of the key files and their roles:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- `Board.tsx`: This is the main component of the game. It uses the `useGameLogic` hook to manage the game state and handle user interactions.
+- `Card.tsx`: This component represents a single card on the board. It receives its state and actions from the Board component.
+- `useGameLogic.ts`: This is a custom hook that encapsulates the game logic. It manages the state of the cards and provides actions to flip cards and check for matches.
+- `GameContext.ts`: This file sets up a React context for the game. It's used to share the game state and actions with other components.
+- `types.ts`: This file contains TypeScript interfaces and type definitions used throughout the project.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Setup
 
-### `npm test`
+To run the game locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required dependencies with `npm install`.
+4. Start the development server with `npm start`.
+5. Open your browser and navigate to `http://localhost:3000` to play the game.
 
-### `npm run build`
+## Gameplay
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The game starts with all cards face down. Click on a card to flip it over. Then click on a second card. If the two cards match, they will remain face up. If they don't match, they will flip back over. The goal of the game is to find all matching pairs.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Customization
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can customize the number of cards on the board by passing a `cardsNumber` prop to the Board component. The game supports 4, 8, and 16 cards to match.

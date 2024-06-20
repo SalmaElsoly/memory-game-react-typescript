@@ -8,6 +8,10 @@ const GameProvider: React.FC<{children: ReactNode}> = ({ children }) => {
         solvedCards: 0,
         setSolvedCards: (solved: number) => {
             setGame({ ...game, solvedCards: solved })
+        },
+        numberOfCards: 0,
+        setNumOfCards: (num: number) => {
+            setGame({ ...game, numberOfCards: num })
         }
     });
     return (
@@ -17,4 +21,4 @@ const GameProvider: React.FC<{children: ReactNode}> = ({ children }) => {
     );
 }
 
-export default GameProvider;
+export { GameProvider,GameContext };

@@ -13,5 +13,10 @@ export interface BoardProps {
 export interface GameContextProps {
     solvedCards: number;
     setSolvedCards: (solvedCards: number) => void;
+    numberOfCards: number;
+    setNumOfCards: (num: number) => void;
 }
 
+export interface ProgressBarProps {
+  cardsNumber: number;
+};

@@ -1,0 +1,13 @@
+.progress-bar {
+  width: 100%; /* Full width */
+  height: 20px; /* Specified height */
+  background-color: #e0e0e0; /* Grey background */
+  position: relative; /* Position relative to the board */
+  margin-bottom: 20px; /* Space between the progress bar and the board */
+}
+
+.progressBar .progress {
+  height: 100%; /* Full height */
+  background-color: #4caf50; /* Green background */
+  width: 0; /* Initial width */
+}

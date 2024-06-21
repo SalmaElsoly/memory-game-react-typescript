@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Board from "./components/Board";
-import ProgressBar from "./components/ProgressBar";
-
 
 function App() {
   const [numOfCards, setNumOfCards] = useState<number>(0);
@@ -52,7 +50,6 @@ function App() {
         </form>
       ) : (
         <div>
-            <ProgressBar cardsNumber={numOfCards} />
           <Board cardsNumber={numOfCards} />
         </div>
       )}

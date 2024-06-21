@@ -6,7 +6,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({cardsNumber}) => {
     const game = useContext(GameContext) as GameContextProps;
     return (
         <div className="progress-bar">
-            <progress value={game.solvedCards} max={cardsNumber}></progress>
+            <progress  value={game.solvedCards} max={cardsNumber}></progress>
+            <span>{game.solvedCards}/{cardsNumber}</span>
         </div>
     );
 }

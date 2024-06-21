@@ -1,13 +1,67 @@
+/* Container for the progress bar */
 .progress-bar {
-  width: 100%; /* Full width */
-  height: 20px; /* Specified height */
-  background-color: #e0e0e0; /* Grey background */
-  position: relative; /* Position relative to the board */
-  margin-bottom: 20px; /* Space between the progress bar and the board */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  margin: 15px auto;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-.progressBar .progress {
-  height: 100%; /* Full height */
-  background-color: #4caf50; /* Green background */
-  width: 0; /* Initial width */
+/* The progress element itself */
+
+progress {
+  width: 90%; /* Adjust width as necessary */
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* The text showing the progress */
+.progress-bar span {
+  font-size: 16px;
+  color: #333;
+  margin-left: 15px;
+}
+
+progress[value] {
+  --w: 600px; /* the width*/
+  --color:  /* the progress color */
+    linear-gradient(#fff8,#fff0),
+    repeating-linear-gradient(135deg,#0003 0 10px,#0000 0 20px),
+    /* if < 30% "red" */
+    linear-gradient(red    0 0) 0 /calc(var(--w)*.3 - 100%) 1px,
+    /* if < 60% "orange" */
+    linear-gradient(orange 0 0) 0 /calc(var(--w)*.6 - 100%) 1px,
+
+    linear-gradient(yellow 0 0) 0/calc(var(--w)*.9 - 100%) 1px,
+    /* else "green" */
+    green;
+  --background: lightgrey; /* the background color */
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  width: var(--w);
+  margin: 0 10px;
+  border-radius: 10em;
+  background: var(--background);
+}
+progress[value]::-webkit-progress-bar {
+  border-radius: 10em;
+  background: var(--background);
+}
+progress[value]::-webkit-progress-value {
+  border-radius: 10em;
+  background: var(--color);
+}
+progress[value]::-moz-progress-bar {
+  border-radius: 10em;
+  background: var(--color);
 }

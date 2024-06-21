@@ -20,3 +20,7 @@ export interface GameContextProps {
 export interface ProgressBarProps {
   cardsNumber: number;
 };
+
+export interface CongratsProps {
+    onPlayAgain: () => void;
+}

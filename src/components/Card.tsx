@@ -3,7 +3,7 @@ import "../style/card.css";
 
 const Card: React.FC<CardProps> = ({ id, image, flipped, matched,onClick }) => {
     return (
-        <div className={`card ${flipped || matched ? "flipped" : ""}`} onClick={()=>onClick(id)}>
+        <div className={`card ${flipped || matched ? "flipped" : ""} ${matched? "matched":""}`} onClick={()=>onClick(id)}>
         <div className="card-inner">
           <div className="card-front">
             <img src={image} alt={`card-${id}`} />

@@ -1,0 +1,69 @@
+.congrats {
+  position: fixed; /* Use fixed positioning to overlay on top of the game board */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the modal */
+  width: 80%; /* Adjust width as needed */
+  max-width: 400px; /* Maximum width */
+  padding: 20px;
+  background-color: #fff; /* Light background for the modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 8px; /* Rounded corners */
+  text-align: center; /* Center the text */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.congrats h1 {
+  color: #4CAF50; /* Green color for the congratulations message */
+  margin-bottom: 16px; /* Space below the heading */
+}
+
+.congrats p {
+  margin-bottom: 24px; /* Space above the button */
+  color: #333; /* Darker text color for contrast */
+}
+
+.congrats button {
+  background-color: #4CAF50; /* Green background for the button */
+  color: #fff; /* White text */
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding for size */
+  border-radius: 5px; /* Rounded corners for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Larger font size */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.congrats button:hover {
+  background-color: #45a049; /* Darker shade of green on hover */
+}
+
+.emoji-container{
+    margin: 10px;
+}
+
+@keyframes floatAndFade {
+  0% {
+    transform: scale(2);
+    opacity: 0;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+}
+  50% {
+    transform: scale(3);
+    opacity: 1;
+    -webkit-transform: scale(3);
+    -moz-transform: scale(3);
+    -ms-transform: scale(3);
+    -o-transform: scale(3);
+}
+  
+}
+
+.emoji {
+  display: inline-block;
+  animation: floatAndFade 4s ease-in-out infinite;
+  animation-delay: 1s; /* Adjust delay as needed */
+}

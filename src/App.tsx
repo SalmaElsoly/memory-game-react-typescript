@@ -1,9 +1,30 @@
-import { useState } from "react";
+import { useState, useContext,useEffect } from "react";
 import Board from "./components/Board";
+import Congrats from "./components/Congrats";
+import { GameContext } from "./contexts/GameContext";
 
 function App() {
   const [numOfCards, setNumOfCards] = useState<number>(0);
   const [gameStarted, setGameStarted] = useState<boolean>(false);
+  const [showCongrats, setShowCongrats] = useState(false);
+  const game = useContext(GameContext);
+
+  useEffect(() => {
+    if (game?.solvedCards === numOfCards) {
+      const timer = setTimeout(() => {
+        setShowCongrats(true);
+      }, 1000); // Delay in milliseconds
+      return () => clearTimeout(timer);
+    } else {
+      setShowCongrats(false);
+    }
+  }, [game?.solvedCards, numOfCards]);
+
+  const playAgain = () => {
+    setGameStarted(false);
+    setNumOfCards(0);
+    game?.setSolvedCards(0);
+   };
 
   return (
     <div className="modal">
@@ -50,7 +71,11 @@ function App() {
         </form>
       ) : (
         <div>
-          <Board cardsNumber={numOfCards} />
+          {showCongrats ? (
+            <Congrats onPlayAgain={playAgain} />
+          ) : (
+            <Board cardsNumber={numOfCards} />
+          )}
         </div>
       )}
     </div>
